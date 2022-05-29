@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Light Theme */
+body[data-theme = "light"]{
+    --color-1: black;
+    --color-2: rgb(15, 109, 218);
+    --color-3: rgb(165, 165, 165);
+    --color-4: white;
+    --color-5: gainsboro;
+    --color-6: white;
+}
+
+/* Dark Theme */
+body[data-theme = "dark"]{
+    --color-1: white;
+    --color-2: rgb(15, 109, 218);
+    --color-3: rgb(20, 19, 19);
+    --color-4: rgb(58, 57, 57);
+    --color-5: rgb(102, 100, 100);
+    --color-6: black;
+}
+
+body{
+    height: 100vh;
+    color: var(--color-1);
+    background-color: var(--color-3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 405px;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    padding: 30px 0;
+    position: relative;
+    margin: auto;
+}
+
+.task-input{
+    display: flex;
+    height: 70px;
+    padding: 10px 25px;
+    position: relative;
+}
+
+.text-icon{
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+    color: var(--color-5);
+}
+
+.input{
+    color: var(--color-1);
+    background-color: var(--color-4);
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid var(--color-1);
+    padding: 0 20px 0 50px;
+    margin-right: 3px;
+}
+
+.input::placeholder{
+    color: var(--color-5);
+}
+
+.add-btn{
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--color-2);
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 25px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.filters span{
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+.filters span.active{
+    color: var(--color-2);
+}
+
+.clear-btn{
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--color-2);
+    padding: 7px 13px;
+    cursor: pointer;
+}
+
+.task-box{
+    margin: 20px 25px;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.task label{
+    display: flex;
+}
+
+.task label p.checked{
+    text-decoration: line-through;
+    color: var(--color-1);
+}
+
+.task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.task label input{
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.settings{
+    cursor: pointer;
+    position: relative;
+}
+
+.task-menu{
+    list-style: none;
+    position: absolute;
+    padding: 5px 0;
+    right: -10px;
+    bottom: -65px;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    z-index: 2;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: .2s ease;
+}
+
+.settings .task-menu.show{
+    transform: scale(1);
+}
+
+.task-menu li{
+    font-size: 16px;
+    padding: 5px 5px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.task-menu li:hover{
+    background-color: var(--color-5);
+}
+
+.task-menu li i{
+    padding-right: 10px;
+}
+
+/* THEME SWITCH */
+
+.theme-switcher{
+    position: absolute;
+    right: 25px;
+    top: 5px;
+}
+
+#switcher{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.switchlabel{
+    background-color: var(--color-1);
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: .5s ease;
+}
+
+.text{
+    opacity: 0;
+}
+
+.switchlabel::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--color-6);
+    top: 55%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: .5s ease;
+}
+
+#switcher:checked + .switchlabel{
+    color: var(--color-1);
+    background-color: var(--color-1);
+    /* border: 2px solid var(--color-6); */
+}
+
+#switcher:checked + .switchlabel::after{
+    background-color: black;
+    left: calc(100% - 25px);
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 960px){
+    .container{
+        width: 90%;
+    }
+
+    .switchlabel::after{
+        top: 49.5%;
+    }
+}

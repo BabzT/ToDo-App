@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/cefa489f50.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body data-theme="light">
+    <section class="main">
+    <section class="container">
+        <div class="theme-switcher">
+            <input type="checkbox" id="switcher">
+            <label for="switcher" class="switchlabel"><span class="text">Switch</span></label>
+        </div>
+
+        <div class="task-input">
+            <i class="fa fa-align-left text-icon"></i>
+            <input type="text" class="input" placeholder="New task">
+            <button class="add-btn">Add</button>
+        </div>
+        <div class="controls">
+            <div class="filters">
+                <span id="all" class="active">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <ul class="task-box"></ul>
+    </section>
+</section>
+    
+
+<script src="text.js"></script>
+</body>
+</html>
