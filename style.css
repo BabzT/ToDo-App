@@ -32,7 +32,6 @@ body{
     padding: 20px 0;
     color: var(--color-1);
     background-color: var(--color-3);
-    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,5 +254,19 @@ body{
 
     .switchlabel::after{
         top: 49.5%;
+    }
+
+    .filters span{
+        cursor: pointer;
+        margin-right: 6px;
+        font-size: 15px;
+    }
+
+    .clear-btn{
+        font-size: 14px;
+    }
+
+    .task{
+        font-size: 15px;
     }
 }
