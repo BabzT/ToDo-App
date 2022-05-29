@@ -29,6 +29,7 @@ body[data-theme = "dark"]{
 
 body{
     height: 100vh;
+    padding-top: 20px;
     color: var(--color-1);
     background-color: var(--color-3);
     overflow: hidden;
