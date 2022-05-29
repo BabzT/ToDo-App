@@ -87,9 +87,31 @@ function updateStatus(doneTask){
     localStorage.setItem("todo-list", JSON.stringify(todos));
 }
 
+// To use Add button
 addTask.addEventListener("click", (e) => {
     let userTask = task.value.trim();
     if(e.target.click && userTask){
+       if (!isEditedTask) { // if isEditedTask is not true
+        if(!todos){ //if todos doesn't exist, pass an empty array
+            todos = [];
+        }
+        let taskInfo = {name: userTask, status: "pending"};
+        todos.push(taskInfo); // adding new task to todos
+       }
+       else{
+            isEditedTask = false;
+            todos[editId].name = userTask;
+       }
+        task.value = "";
+        localStorage.setItem("todo-list", JSON.stringify(todos));
+        displayTodo();
+    }
+});
+
+// To use Enter key
+task.addEventListener("keyup", (e) => {
+    let userTask = task.value.trim();
+    if(e.key == "Enter" && userTask){
        if (!isEditedTask) { // if isEditedTask is not true
         if(!todos){ //if todos doesn't exist, pass an empty array
             todos = [];
