@@ -9,7 +9,7 @@ The App is live [here](https://babzt.github.io/ToDo-App/)
 - Edit Tasks
 - Mark the done tasks and delete tasks
 - Can view all pending and completed tasks
-- Change to light or dark mode on toggle
+- Change to light or dark mode on toggle :last_quarter_moon:
 
 ## Technologies Used
 
