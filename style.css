@@ -228,7 +228,7 @@ body{
     height: 20px;
     border-radius: 50px;
     background-color: var(--color-6);
-    top: 55%;
+    top: 53%;
     left: 3px;
     transform: translateY(-50%);
     transition: .5s ease;
@@ -237,7 +237,6 @@ body{
 #switcher:checked + .switchlabel{
     color: var(--color-1);
     background-color: var(--color-1);
-    /* border: 2px solid var(--color-6); */
 }
 
 #switcher:checked + .switchlabel::after{
