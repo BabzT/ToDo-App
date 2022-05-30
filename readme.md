@@ -5,7 +5,7 @@ This is a TODO App that you can use to set your daily tasks.
 The App is live [here](https://babzt.github.io/ToDo-App/)
 
 ## Features :sunglasses:
-- Add Tasks
+- Add Tasks using add button or Enter key
 - Edit Tasks
 - Mark the done tasks and delete tasks
 - Can view all pending and completed tasks
